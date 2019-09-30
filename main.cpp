@@ -16,7 +16,7 @@ void bubbleSort(int *a, int n);
 int main(int argc, char* argv[]) {
     // get input: first is random seed, second is vector length
     int seed, length;
-    seed = atoi(argv[0]);
+    seed = atoi(argv[0]);           // Task 1: change cin input to command line arguments
     length = atoi(argv[1]);
     srand(seed);
 
@@ -113,8 +113,14 @@ void mergeSort(vector<int>& a, vector<int>& tmp, int left, int right) {
 }
 
 // Swap function
-void swap(int *a, int *b) {
-    /* your code here */
+void swap(int *a, int *b) {         // Task 2: wrote swap function
+
+    int temp;
+
+    temp = *b;
+    *b = *a;
+    *a = temp;
+
 }
 
 // BubbleSort function
