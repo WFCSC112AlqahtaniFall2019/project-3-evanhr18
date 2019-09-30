@@ -34,14 +34,28 @@ int main(int argc, char* argv[]) {
     int* a = &x;
     int* b = &y;
     swap(*a, *b);
-    if (*a > *b) {
-        cout << "*a = " << *a << ", *b = " << *b << endl;
-        cout << "Unit test successful." << endl;
+    cout << "New values: " << endl;
+    cout << "*a = " << *a << ", *b = " << *b << endl << endl;
+
+
+    //Task 5: unit test for bubble sort
+    cout << "Testing bubbleSort an array with elements [5, 4, 3, 2, 1]" << endl;
+    int* testArray = new int[5];
+    testArray[0] = 5;
+    testArray[1] = 4;
+    testArray[2] = 3;
+    testArray[3] = 2;
+    testArray[4] = 1;
+    bubbleSort(testArray, 5);
+    for (int i = 1; i < 5; i++) {
+        assert(testArray[i - 1] <= testArray[i]);
     }
-    else {
-        cout << "*a = " << *a << ", *b = " << *b << endl;
-        cout << "UNIT TEST FAILED" << endl;
+    cout << "Sorted BubbleSort Unit Test:" << endl;
+    for (int i = 0; i < 5; i++) {
+        cout << testArray[i] << '\t';
     }
+    cout << endl << endl;
+
 
     // initialize and print input
     cout << "Unsorted:" << endl;
