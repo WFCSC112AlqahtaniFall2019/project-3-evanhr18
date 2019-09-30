@@ -2,6 +2,7 @@
 #include <vector>
 #include <ctime>
 #include <cassert>
+#include <cstdlib>
 using namespace std;
 
 // MergeSort function declarations
@@ -12,17 +13,18 @@ void mergeSortedLists(vector<int>& a, vector<int>& tmp, int leftPos, int rightPo
 void swap (int *a, int *b);
 void bubbleSort(int *a, int n);
 
-int main() {
+int main(int argc, char* argv[]) {
     // get input: first is random seed, second is vector length
     int seed, length;
-    cin >> seed >> length;
+    seed = atoi(argv[0]);
+    length = atoi(argv[1]);
     srand(seed);
 
     vector<int> v(length); // vector to be sorted
     vector<int> t(length); // temporary workspace
 
     // define an integer pointer dynamically allocate an array of integers
-    /* your code here */
+    int* array = new int[200];
 
     // initialize and print input
     cout << "Unsorted:" << endl;
@@ -33,7 +35,9 @@ int main() {
     cout << endl;
 
     // copy the random list of integers from vector to array
-    /* your code here */
+    for (int i = 0; i < v.size(); i++) {
+        array[i] = v.at(i);
+    }
 
     clock_t start_mergeSort = clock();
     // sort vector using mergeSort
