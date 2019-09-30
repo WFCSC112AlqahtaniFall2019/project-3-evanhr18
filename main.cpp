@@ -26,6 +26,22 @@ int main(int argc, char* argv[]) {
     // define an integer pointer dynamically allocate an array of integers
     int* array = new int[200];
 
+    // Task 3: unit test for swap
+    cout << "Testing values *a = 5 and *b = 10 in swap function" << endl;
+    int x = 5;
+    int y = 10;
+    int* a = &x;
+    int* b = &y;
+    swap(*a, *b);
+    if (*a > *b) {
+        cout << "*a = " << *a << ", *b = " << *b << endl;
+        cout << "Unit test successful." << endl;
+    }
+    else {
+        cout << "*a = " << *a << ", *b = " << *b << endl;
+        cout << "UNIT TEST FAILED" << endl;
+    }
+
     // initialize and print input
     cout << "Unsorted:" << endl;
     for (int i = 0; i < v.size(); i++) {
